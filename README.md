@@ -38,12 +38,12 @@ This repository contains scripts to extract messages from Telegram channels usin
 
 1. MessageMediaPoll Type:
 
-Reference: 
+   1. Reference: 
 
-1. [https://tl.telethon.dev/constructors/message_media_poll.html](https://tl.telethon.dev/constructors/message_media_poll.html)
-2. [https://tl.telethon.dev/constructors/poll.html](https://tl.telethon.dev/constructors/poll.html)
-3. [https://tl.telethon.dev/types/poll_results.html](https://tl.telethon.dev/types/poll_results.html)
-4. [https://tl.telethon.dev/constructors/poll_answer_voters.html](https://tl.telethon.dev/constructors/poll_answer_voters.html)
+      1. [https://tl.telethon.dev/constructors/message_media_poll.html](https://tl.telethon.dev/constructors/message_media_poll.html)
+      2. [https://tl.telethon.dev/constructors/poll.html](https://tl.telethon.dev/constructors/poll.html)
+      3. [https://tl.telethon.dev/types/poll_results.html](https://tl.telethon.dev/types/poll_results.html)
+      4. [https://tl.telethon.dev/constructors/poll_answer_voters.html](https://tl.telethon.dev/constructors/poll_answer_voters.html)
 
 ```
 {
@@ -65,10 +65,10 @@ Reference:
 
 2. MessageMediaWebPage
 
-Reference: 
+   1. Reference: 
 
-1. [https://tl.telethon.dev/constructors/message_media_web_page.html](https://tl.telethon.dev/constructors/message_media_web_page.html)
-2. [https://tl.telethon.dev/constructors/web_page.html](https://tl.telethon.dev/constructors/web_page.html)
+      1. [https://tl.telethon.dev/constructors/message_media_web_page.html](https://tl.telethon.dev/constructors/message_media_web_page.html)
+      2. [https://tl.telethon.dev/constructors/web_page.html](https://tl.telethon.dev/constructors/web_page.html)
 
 
 ```
@@ -87,10 +87,10 @@ Reference:
 
 3. MessageMediaPhoto
 
-Reference: 
+   1. Reference: 
 
-1. [https://tl.telethon.dev/constructors/message_media_photo.html](https://tl.telethon.dev/constructors/message_media_photo.html)
-2. [https://tl.telethon.dev/constructors/photo.html](https://tl.telethon.dev/constructors/photo.html)
+      1. [https://tl.telethon.dev/constructors/message_media_photo.html](https://tl.telethon.dev/constructors/message_media_photo.html)
+      2. [https://tl.telethon.dev/constructors/photo.html](https://tl.telethon.dev/constructors/photo.html)
 
 ```
 {
@@ -102,10 +102,10 @@ Reference:
 
 4. MessageMediaDocument
 
-Reference: 
+   1. Reference: 
 
-1. [https://tl.telethon.dev/constructors/message_media_document.html](https://tl.telethon.dev/constructors/message_media_document.html)
-2. [https://tl.telethon.dev/constructors/document.html](https://tl.telethon.dev/constructors/document.html)
+      1. [https://tl.telethon.dev/constructors/message_media_document.html](https://tl.telethon.dev/constructors/message_media_document.html)
+      2. [https://tl.telethon.dev/constructors/document.html](https://tl.telethon.dev/constructors/document.html)
 
 ```
 {
@@ -137,13 +137,9 @@ Reference:
 
 	We need the `peer_channel_id` and `access_hash` in the next steps of scraping.
 
-3. Run `python3 MessageMetadataExtractor.py <API_ID> <API_HASH> <PEER_CHANNEL_ID> <ACCESS_HASH> <MIN_ID> <MAX_ID> <OUTPUT_PATH>`.
-
-
-Here,
-1. `<API_ID>` and `<API_HASH>` were obtained from step 1.
-2. `<PEER_CHANNEL_ID>` and `<ACCESS_HASH>` were obtained from step 2.
-3. Every message in a channel has an id which can be found in the URL. For example, when you navigate to the web version of telegram `web.telegram.com`, login, navigate to a channel, right click on a message and copy its link. The link will be of the form, `https://t.me/<group_name>/<message_id>`. We can extract messages that lie within a range of message_ids. Usually messages go from 1 up to the last message id of the channel.
-
-4. `<MIN_ID>` - all messages lesser than `MIN_ID` will be ignored, `<MAX_ID>` - all messages greater than `MAX_ID` will be ignored.
-5. `<OUTPUT_PATH>` - Output metadata file where each line is a JSON corresponding to a message.
+3. **Extract Metadata**: Run `python3 MessageMetadataExtractor.py <API_ID> <API_HASH> <PEER_CHANNEL_ID> <ACCESS_HASH> <MIN_ID> <MAX_ID> <OUTPUT_PATH>`.
+   1. `<API_ID>` and `<API_HASH>` were obtained from step 1.
+   2. `<PEER_CHANNEL_ID>` and `<ACCESS_HASH>` were obtained from step 2.
+   3. Every message in a channel has an id which can be found in the URL. For example, when you navigate to the web version of telegram `web.telegram.com`, login, navigate to a channel, right click on a message and copy its link. The link will be of the form, `https://t.me/<group_name>/<message_id>`. We can extract messages that lie within a range of message_ids. Usually messages go from 1 up to the last message id of the channel.
+   4. `<MIN_ID>` - all messages lesser than `MIN_ID` will be ignored, `<MAX_ID>` - all messages greater than `MAX_ID` will be ignored.
+   5. `<OUTPUT_PATH>` - Output metadata file where each line is a JSON corresponding to a message.
