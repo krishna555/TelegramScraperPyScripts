@@ -31,7 +31,7 @@ class MessageMetadataExtractor:
 		self.client.start()
 
 	def get_messages(self):
-		print(type(self.peer_channel_id), type(self.access_hash), type(self.min_id), type(self.max_id))
+		# print(type(self.peer_channel_id), type(self.access_hash), type(self.min_id), type(self.max_id))
 		return self.client.get_messages(InputPeerChannel(self.peer_channel_id, self.access_hash), min_id=self.min_id, max_id=self.max_id)
 
 
@@ -74,6 +74,7 @@ output_path = sys.argv[7]
 
 curr = 0
 while curr < max_id:
+	print(curr)
 	msg_obj = MessageMetadataExtractor(api_id, api_hash, peer_channel_id, access_hash, curr, curr + 30, output_path)
 	msg_obj.run()
 	msg_obj.client.disconnect()
